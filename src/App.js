@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
+import Character from './components/Character';
 
 
 const App = () => {
@@ -24,7 +25,9 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
-      {characters && <Character info ={character} key ={character.name}></CharacterCard>}
+      {characters.map(character =>{
+        return <Character info ={character} key ={ character.name}></Character>
+      })}
     </div>
   );
 }
